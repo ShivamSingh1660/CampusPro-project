@@ -39,8 +39,8 @@ export const authApi = {
 
   async verifyOtp(data: { otp: string, phone?: string }) {
     await delay(1000)
-    if (data.otp === "000000") {
-      throw new Error("Invalid OTP")
+    if (data.otp !== "123456") {
+      throw new Error("Invalid OTP code. Use 123456 for testing.")
     }
     return { success: true, message: "Phone verified successfully" }
   },

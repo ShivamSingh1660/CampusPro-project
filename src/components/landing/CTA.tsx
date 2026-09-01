@@ -13,7 +13,7 @@ export function CTA() {
         <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">
           Prepare consistently. Track your progress. Be ready when the opportunity arrives.
         </p>
-        <Link href="/dashboard">
+        <Link href="/signup">
           <Button size="lg" className="h-14 px-10 text-lg rounded-full shadow-lg shadow-primary/25">
             Get Started for Free
           </Button>

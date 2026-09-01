@@ -1,3 +1,4 @@
+import Link from "next/link"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Progress } from "@/components/ui/progress"
@@ -15,6 +16,20 @@ export default function DashboardPage() {
         </div>
         <Button>Resume Practice</Button>
       </div>
+
+      {/* Profile Completion Banner (Mocked state for incomplete profile) */}
+      <Card className="bg-primary/5 border-primary/20">
+        <CardContent className="p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="space-y-2 w-full sm:w-2/3">
+            <h3 className="font-semibold text-foreground">Profile 40% complete</h3>
+            <p className="text-sm text-muted-foreground">Complete your profile to get better job recommendations and personalized practice problems.</p>
+            <Progress value={40} className="h-2 mt-2 w-full max-w-md" />
+          </div>
+          <Link href="/dashboard/profile" className="w-full sm:w-auto">
+            <Button className="w-full sm:w-auto whitespace-nowrap">Complete Profile</Button>
+          </Link>
+        </CardContent>
+      </Card>
 
       {/* Top Metrics Row */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">

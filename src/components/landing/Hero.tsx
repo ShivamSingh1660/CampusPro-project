@@ -33,7 +33,7 @@ export function Hero() {
             </p>
             
             <div className="mt-10 flex flex-col sm:flex-row gap-4">
-              <Link href="/dashboard">
+              <Link href="/signup">
                 <Button size="lg" className="w-full sm:w-auto h-12 px-8 rounded-full shadow-lg shadow-primary/20 text-base">
                   Get Started
                 </Button>

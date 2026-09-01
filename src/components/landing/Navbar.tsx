@@ -61,10 +61,10 @@ export function LandingNavbar() {
           {/* Right Actions */}
           <div className="hidden md:flex items-center gap-4">
             <ThemeToggle />
-            <Link href="/dashboard">
+            <Link href="/login">
               <Button variant="ghost" className="hidden lg:flex">Login</Button>
             </Link>
-            <Link href="/dashboard">
+            <Link href="/signup">
               <Button className="shadow-sm">Get Started</Button>
             </Link>
           </div>
@@ -98,10 +98,10 @@ export function LandingNavbar() {
             ))}
           </nav>
           <div className="flex flex-col gap-4 mt-4">
-            <Link href="/dashboard" onClick={() => setMobileMenuOpen(false)}>
+            <Link href="/login" onClick={() => setMobileMenuOpen(false)}>
               <Button variant="outline" className="w-full justify-center h-12">Login</Button>
             </Link>
-            <Link href="/dashboard" onClick={() => setMobileMenuOpen(false)}>
+            <Link href="/signup" onClick={() => setMobileMenuOpen(false)}>
               <Button className="w-full justify-center h-12">Get Started</Button>
             </Link>
           </div>

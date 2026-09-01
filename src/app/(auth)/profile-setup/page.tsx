@@ -183,22 +183,26 @@ export default function SetupPage() {
         )}
       </div>
 
-      <div className="flex items-center justify-between gap-4">
-        {step > 1 ? (
-          <Button variant="outline" onClick={handleBack} disabled={isLoading}>Back</Button>
-        ) : (
-          <Button variant="ghost" className="text-muted-foreground" onClick={() => router.push("/dashboard")}>Skip for now</Button>
-        )}
+      <div className="flex items-center justify-between gap-4 pt-4 border-t border-border/40">
+        <Button variant="ghost" className="text-muted-foreground hover:text-foreground" onClick={() => router.push("/dashboard")} disabled={isLoading}>
+          Skip for now
+        </Button>
         
-        {step < totalSteps ? (
-          <Button onClick={handleNext} className="ml-auto w-32">Continue</Button>
-        ) : (
-          <Button onClick={handleSubmit} className="ml-auto w-40" disabled={isLoading}>
-            {isLoading ? (
-              <><Loader2 className="mr-2 h-4 w-4 animate-spin" /> Saving...</>
-            ) : "Complete Setup"}
-          </Button>
-        )}
+        <div className="flex gap-2 ml-auto">
+          {step > 1 && (
+            <Button variant="outline" onClick={handleBack} disabled={isLoading}>Back</Button>
+          )}
+          
+          {step < totalSteps ? (
+            <Button onClick={handleNext} className="w-32">Continue</Button>
+          ) : (
+            <Button onClick={handleSubmit} className="w-40" disabled={isLoading}>
+              {isLoading ? (
+                <><Loader2 className="mr-2 h-4 w-4 animate-spin" /> Saving...</>
+              ) : "Complete Setup"}
+            </Button>
+          )}
+        </div>
       </div>
     </div>
   )

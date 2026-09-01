@@ -46,11 +46,11 @@ export default function SignupPage() {
     try {
       await authApi.register(data)
       // Store phone temporarily for OTP screen (in a real app, use Context/State/URL)
-      sessionStorage.setItem("verifyPhone", data.phone)
+      // sessionStorage.setItem("verifyPhone", data.phone)
       toast.success("Account created!", {
-        description: "Please verify your mobile number to continue.",
+        description: "Let's set up your profile.",
       })
-      router.push("/verify-otp")
+      router.push("/profile-setup")
     } catch (error: any) {
       toast.error("Registration Failed", {
         description: error.message || "An error occurred during registration.",

@@ -12,8 +12,6 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Eye, EyeOff, Loader2 } from "lucide-react"
-import { OTPInput } from "@/components/ui/OTPInput"
-
 const resetPasswordSchema = z.object({
   password: z.string().min(8, "Password must be at least 8 characters."),
   confirmPassword: z.string()
@@ -30,7 +28,6 @@ export default function ResetPasswordPage() {
   const [showConfirmPassword, setShowConfirmPassword] = React.useState(false)
   const [isLoading, setIsLoading] = React.useState(false)
   const [otp, setOtp] = React.useState("")
-  const [otpError, setOtpError] = React.useState(false)
 
   const {
     register,
@@ -41,14 +38,12 @@ export default function ResetPasswordPage() {
   })
 
   const onSubmit = async (data: ResetPasswordFormValues) => {
-    if (otp.length !== 6) {
-      setOtpError(true)
-      toast.error("Please enter the 6-digit verification code.")
+    if (otp.length < 4) {
+      toast.error("Please enter a valid verification code.")
       return
     }
 
     setIsLoading(true)
-    setOtpError(false)
     try {
       await authApi.resetPassword({ ...data, otp })
       toast.success("Password reset successful!", {
@@ -72,17 +67,15 @@ export default function ResetPasswordPage() {
       </div>
 
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-        <div className="space-y-3">
-          <Label>Verification Code</Label>
-          <div className="flex justify-start">
-            <OTPInput 
-              length={6}
-              value={otp}
-              onChange={(val) => { setOtp(val); setOtpError(false); }}
-              disabled={isLoading}
-              error={otpError}
-            />
-          </div>
+        <div className="space-y-2">
+          <Label htmlFor="verificationCode">Verification Code</Label>
+          <Input 
+            id="verificationCode"
+            placeholder="Enter code"
+            value={otp}
+            onChange={(e) => setOtp(e.target.value)}
+            disabled={isLoading}
+          />
         </div>
 
         <div className="space-y-2">

@@ -45,7 +45,7 @@ export default function LoginPage() {
       if (res.user.setupCompleted) {
         router.push("/dashboard")
       } else {
-        router.push("/setup")
+        router.push("/profile-setup")
       }
     } catch (error: any) {
       toast.error("Login Failed", {
