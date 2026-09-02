@@ -19,7 +19,8 @@ import {
   User,
   Settings,
   ChevronLeft,
-  ChevronRight
+  ChevronRight,
+  Target
 } from "lucide-react"
 
 const sidebarItems = [
@@ -28,6 +29,7 @@ const sidebarItems = [
   { name: "Applications", href: "#", icon: FileText },
   { name: "Preparation", href: "/preparation", icon: BookOpen },
   { name: "Coding", href: "/coding", icon: Code2 },
+  { name: "Aptitude", href: "/aptitude", icon: Target },
   { name: "Resume Builder", href: "#", icon: FileBadge2 },
   { name: "Mock Interview", href: "#", icon: Users },
   { name: "Analytics", href: "#", icon: BarChart3 },
