@@ -27,7 +27,7 @@ const sidebarItems = [
   { name: "Jobs & Internships", href: "#", icon: Briefcase },
   { name: "Applications", href: "#", icon: FileText },
   { name: "Preparation", href: "/preparation", icon: BookOpen },
-  { name: "Coding", href: "#", icon: Code2 },
+  { name: "Coding", href: "/coding", icon: Code2 },
   { name: "Resume Builder", href: "#", icon: FileBadge2 },
   { name: "Mock Interview", href: "#", icon: Users },
   { name: "Analytics", href: "#", icon: BarChart3 },
